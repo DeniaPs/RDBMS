@@ -1,0 +1,5 @@
+
+
+SELECT Project.projNo, Worker.empId, lastName, firstName
+FROM PROJECT, WORKER, ASSIGN
+WHERE startDate > '1.9.2021' AND Project.projNo = Assign.projNo AND Assign.empId = Worker.empId;

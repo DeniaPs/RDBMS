@@ -1,0 +1,7 @@
+
+
+CREATE VIEW MYPROJECT(projNo, managerLastName, managerFirstName, empId, empLastName, empfirstName)
+AS SELECT Project.projNo, PROJMGR.lastName, PROJMGR.firstName, EMP.empId, EMP.lastName, EMP.firstName
+FROM Worker PROJMGR, Worker EMP, ASSIGN, PROJECT
+WHERE EMP.empId = ASSOGN.empId AND Assign.projNo=Project.projNo AND Project.projmgrId = PROJMGR.empId
+

@@ -1,0 +1,3 @@
+SELECT empId.projNo
+FROM ASSIGN
+WHERE rating is null;

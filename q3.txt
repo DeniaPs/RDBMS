@@ -1,0 +1,2 @@
+SELECT empId, firstName, lastName, salary/12
+FROM WORKER;

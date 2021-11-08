@@ -1,0 +1,7 @@
+
+SELECT firstName, lastName, departmentName
+FROM WORKER
+WHERE empId (SELECT emppId
+		FROM ASSIGN 
+		WHERE projNo = 1019);
+
