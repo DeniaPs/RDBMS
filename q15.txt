@@ -1,6 +1,11 @@
-SELECT unique Worker.firstName, Worker.lastName, Managers.firstName, Managers.LastName
-FROM WORKER, PROJECT, DEPT, ASSIGN
-WHERE Worker.departmentName = Dept.DepartmentName AND Managers.empId = Dept.mgrId AND 
-										NOT EXISTS(SELECT *
-										FROM ASSIGN
-										WHERE Assign.empId = Worker.empId);
+
+SELECT Worker.firstName, Worker.lastName, 
+FROM WORKER 
+RIGHT JOIN ASSIGN ON Worker.empId = Assign.empId 
+RIGHT JOIN PROJECT ON Project.projNo = Assign.projNo
+RIGHT JOIN DEPT ON Dept.mgrId = Project.projmgrId 
+WHERE NOT EXISTS(SELECT * 
+		FROM ASSIGN
+		WHERE Assign.empId = Worker.empId);
+
+
