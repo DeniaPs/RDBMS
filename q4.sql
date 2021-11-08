@@ -1,4 +1,4 @@
 select firstname,lastname
-from worker,project
-where worker.empid = project.projmgrid and project.projno = 1001
+from worker,assign
+where worker.empid = assign.empid and assign.projno = 1001 
 order by lastname asc
