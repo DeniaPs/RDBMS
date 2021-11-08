@@ -1,0 +1,6 @@
+ALTER TABLE PROJECT
+ADD numEmployeesAssigned number;
+UPDATE PROJECT
+SET project.numemployeesassigned = (SELECT COUNT(assign.empid)
+					FROM ASSIGN
+					WHERE assign.empid = project.projmgrid);

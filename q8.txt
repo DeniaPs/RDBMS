@@ -1,0 +1,9 @@
+SELECT firstName, lastName, rating
+FROM WORKER, ASSIGN
+WHERE	 	Worker.empId = Assign.empId
+	AND projNo IN (SELECT projNo
+			FROM Project
+			WHERE projMgrId = (SELECT empId
+			FROM WORKER 
+			WHERE firstName = 'Michael' AND lastName = 'Burns'))
+ORDER BY lastName, firstName; 

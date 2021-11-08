@@ -1,0 +1,6 @@
+SELECT unique Worker.firstName, Worker.lastName, Managers.firstName, Managers.LastName
+FROM WORKER, PROJECT, DEPT, ASSIGN
+WHERE Worker.departmentName = Dept.DepartmentName AND Managers.empId = Dept.mgrId AND 
+										NOT EXISTS(SELECT *
+										FROM ASSIGN
+										WHERE Assign.empId = Worker.empId);

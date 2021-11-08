@@ -1,0 +1,3 @@
+SELECT projNo, projName
+FROM view_proj
+WHERE empId=101;

@@ -1,0 +1,3 @@
+SELECT *
+FROM PROJECT
+WHERE projName LIKE '%urn%';

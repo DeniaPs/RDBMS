@@ -1,0 +1,12 @@
+INSERT INTO WORKER(firstName, lastName, empId)
+VALUES ('Marios', 'Riza', 313997);
+INSERT INTO WORKER(firstName, lastName, empId)
+VALUES ('Denia', 'Psarrou', 256204);
+INSERT INTO ASSIGN(projNo, empId)
+VALUES (1001, 313997);
+INSERT INTO ASSIGN(projNo, empId)
+VALUES (1005, 313997);
+INSERT INTO ASSIGN(projNo, empId)
+VALUES (1019, 256204)
+INSERT INTO ASSIGN(projNo, empId)
+VALUES (1025, 256204);

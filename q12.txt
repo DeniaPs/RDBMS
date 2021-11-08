@@ -1,0 +1,3 @@
+UPDATE ASSIGN
+SET hoursassigned = 10
+WHERE empId = 110 and projNo = 1019;

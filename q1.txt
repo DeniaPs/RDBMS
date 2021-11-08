@@ -1,0 +1,5 @@
+SELECT firstName, lastName
+FROM WORKER
+WHERE departmentId =    (SELECT departmentId
+			FROM DEPT
+			WHERE departmentName = 'Accounting'); 

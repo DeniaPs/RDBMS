@@ -1,0 +1,5 @@
+SELECT firstName, lastName
+FROM WORKER
+WHERE salary IN (SELECT MIN(salary) 
+		FROM WORKER 
+		WHERE departmentId = 2);

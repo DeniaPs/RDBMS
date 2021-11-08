@@ -1,0 +1,29 @@
+CREATE OR REPLACE TRIGGER ADDASSIGN 
+AFTER INSERT ON ASSIGN
+FOR EACH ROW
+BEGIN 
+	UPDATE PROJECT
+	SET numEmployeesAssigned = numEmployeesAssigned + 1
+	WHERE Projec.projNo = :NEW.projNo;
+END;
+
+CREATE OR REPLACE TRIGGER DROPASSIGN
+AFTER DELETE ON ASSIGN
+FOR EACH ROW
+BEGIN 
+	UPDATE PROJECT
+	SET numEmployeesAssigned = numEmployeesAssigned - 1
+	WHERE Project.projNo = :OLD.projNo;
+END;
+
+CREATE OR REPLACE TRIGGER SWITCHASSIGN
+AFTER UPDATE OF projNo ON Assign
+FOR EACH ROW
+	BEGIN
+		UPDATE Project
+		SET numEmployeesAssigned = numEmployeesAssigned + 1
+		WHERE Project.projNo = :NEW.projNo;
+		UPDATE Project
+		SET numEmployeesAssigned = numEmployeesAssigned - 1
+		WHERE Project.projNo = :OLD.projNo;
+	END:
